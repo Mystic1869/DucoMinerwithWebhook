@@ -141,7 +141,7 @@ namespace
   const int interval = 10000;
   int stake;
   float balance;
-  const char *serverURL = "https://server.duinocoin.com/users/" + Username + "";
+  String *serverURL = "https://server.duinocoin.com/users/" + String(Username) + "";
 
   // Change the part in brackets to your WiFi name
   const char *SSID = Wifiname;
@@ -644,7 +644,7 @@ void webhook()
     https.begin(client, discord);
     https.addHeader("Content-Type", "application/json");
 
-    int httpsCode = https.POST("{\"content\":null,\"embeds\":[{\"title\":\"Duino-Coin Mining Logs\",\"description\":\":coin:**Balance**: "+ String(balance) +" DUCO\\n:euro:**Stake**: "+ String(stake) +" DUCO\",\"url\":\"https://wallet.duinocoin.com/\",\"color\":16729856,\"fields\":[{\"name\":\":satellite_orbital:Details:\",\"value\":\":computer:Status: " + client_buffer + "\\n:jigsaw:Share: " + String(share_count) + "\\n:hash:Hashrate: " + String(hashrate) + " H/s\\n:radioactive:Memory: " + String(ESP.getFreeHeap()/1000) + "%\"}],\"footer\":{\"text\":\"Made by Rishabh <3\"},\"thumbnail\":{\"url\":\"https://lh3.googleusercontent.com/u4urRlG69w3g5mwwoRK5hot4mUbYCOVl6SbEKfyU5QfCXpw2zjZPkCD3YGd7ItFvxD96AhA7P_M1yIEJ584sLWpC6Aa8t2AbDq9cdA=w600\"}}],\"attachments\":[]}");
+    int httpsCode = https.POST("{\"content\":null,\"embeds\":[{\"title\":\"Duino-Coin Mining Logs\",\"description\":\":coin:**Balance**: "+ String(balance) +" DUCO\\n:euro:**Stake**: "+ String(stake) +" DUCO\",\"url\":\"https://wallet.duinocoin.com/\",\"color\":16729856,\"fields\":[{\"name\":\":satellite_orbital:Details:\",\"value\":\":computer:Status: " + client_buffer + "\\n:jigsaw:Share: " + String(share_count) + "\\n:hash:Hashrate: " + String(hashrate) + " H/s\\n:radioactive:Memory: " + String(ESP.getFreeHeap()/1000) + "%\"}],\"footer\":{\"text\":\"Made by MysticUwU <3\"},\"thumbnail\":{\"url\":\"https://lh3.googleusercontent.com/u4urRlG69w3g5mwwoRK5hot4mUbYCOVl6SbEKfyU5QfCXpw2zjZPkCD3YGd7ItFvxD96AhA7P_M1yIEJ584sLWpC6Aa8t2AbDq9cdA=w600\"}}],\"attachments\":[]}");
 
     // if the code returned is -1 there has been an error, that's why it checks on -1.
     if (httpsCode > -1)
