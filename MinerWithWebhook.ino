@@ -141,6 +141,7 @@ namespace
   const int interval = 10000;
   int stake;
   float balance;
+  const char *serverURL = "https://server.duinocoin.com/users/" + Username + "";
 
   // Change the part in brackets to your WiFi name
   const char *SSID = Wifiname;
@@ -151,7 +152,7 @@ namespace
   // Change the part in brackets if you want to set a custom miner name (use Auto to autogenerate, None for no name)
   const char *RIG_IDENTIFIER = "";
   // Change the part in brackets to your mining key (if you enabled it in the wallet)
-  const char *MINER_KEY = "Rishabh1869";
+  const char *MINER_KEY = "";
   // Change false to true if using 160 MHz clock mode to not get the first share rejected
   const bool USE_HIGHER_DIFF = true;
   // Change true to false if you don't want to host the dashboard page
@@ -667,7 +668,7 @@ void dataFetcher(){
     HTTPClient https;
 
     Serial.print("[HTTPS] begin...\n");
-    if (https.begin(*client, "https://server.duinocoin.com/users/MysticUwU")) {  // HTTPS
+    if (https.begin(*client, serverURL)) {  // HTTPS
 
       Serial.print("[HTTPS] GET...\n");
       // start connection and send HTTP header
