@@ -1,39 +1,10 @@
 /*
-   ____  __  __  ____  _  _  _____       ___  _____  ____  _  _
-  (  _ \(  )(  )(_  _)( \( )(  _  )___  / __)(  _  )(_  _)( \( )
-   )(_) ))(__)(  _)(_  )  (  )(_)((___)( (__  )(_)(  _)(_  )  (
-  (____/(______)(____)(_)\_)(_____)     \___)(_____)(____)(_)\_)
-  Official code for ESP8266 boards                  version 3.18
-
-  Duino-Coin Team & Community 2019-2022 © MIT Licensed
-  https://duinocoin.com
-  https://github.com/revoxhere/duino-coin
-
-  If you don't know where to start, visit official website and navigate to
-  the Getting Started page. Have fun mining!
+This is Official ESP8266 Duco miner with some edits by me(Mystic)
 */
 
-/* If optimizations cause problems, change them to -O0 (the default)
-  NOTE: For even better optimizations also edit your Crypto.h file.
-  On linux that file can be found in the following location:
-  ~/.arduino15//packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/ */
+
 #pragma GCC optimize("-Ofast")
-
-/* If during compilation the line below causes a
-  "fatal error: arduinoJson.h: No such file or directory"
-  message to occur; it means that you do NOT have the
-  ArduinoJSON library installed. To install it,
-  go to the below link and follow the instructions:
-  https://github.com/revoxhere/duino-coin/issues/832 */
 #include <ArduinoJson.h>
-
-/* If during compilation the line below causes a
-  "fatal error: Crypto.h: No such file or directory"
-  message to occur; it means that you do NOT have the
-  latest version of the ESP8266/Arduino Core library.
-  To install/upgrade it, go to the below link and
-  follow the instructions of the readme file:
-  https://github.com/esp8266/Arduino */
 #include <bearssl/bearssl.h>
 #include <TypeConversion.h>
 #include "secret.h"
